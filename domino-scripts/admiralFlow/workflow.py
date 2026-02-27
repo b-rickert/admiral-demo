@@ -18,10 +18,10 @@ def simple_admiral_workflow() -> FinalOutputs:
 
     #Using the Domino helpers Input object type for simplicity, we define our job1 Input filepath strings as a list.
     inputDatasets = [
-        Input(name="ex", type=str, value="/mnt/data/Admiral-Demo/ex.rda"),
-        Input(name="vs", type=str, value="/mnt/data/Admiral-Demo/vs.rda"),
-        Input(name="admiral_adsl", type=str, value="/mnt/data/Admiral-Demo/admiral_adsl.rda")
-    ]
+        Input(name="ex", type=str, value="/mnt/data/Admiral-Demo-Git/ex.rda"),
+        Input(name="vs", type=str, value="/mnt/data/Admiral-Demo-Git/vs.rda"),
+        Input(name="admiral_adsl", type=str, value="/mnt/data/Admiral-Demo-Git/admiral_adsl.rda")
+]
 
     #Similar to the inputs, we define our outputs as a list FlyteFiles because the outputs are pushed to the flyte blob storage account in Azure
     #To learn more about FlyteFiles, see the docs at https://docs.flyte.org/en/latest/user_guide/data_types_and_io/flytefile.html
