@@ -14,7 +14,7 @@ class FinalOutputs(NamedTuple):
 def simple_admiral_workflow() -> FinalOutputs:
 
     #Flows requires the user to take a snapshot of a Dataset, presumably for read-only purposes. You can find the ID of your snapshot using the Domino API.
-    snapshot = DatasetSnapshot(Name='Admiral-Demo-Git', Id='69a1b3943587c61f32cedf28', Version=1)
+    snapshot = DatasetSnapshot(Name='Admiral-Demo-Git', Id='69a1b3943587c61f32cedf29', Version=1)
 
     #Using the Domino helpers Input object type for simplicity, we define our job1 Input filepath strings as a list.
     inputDatasets = [
