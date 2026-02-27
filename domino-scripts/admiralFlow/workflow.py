@@ -32,7 +32,7 @@ def simple_admiral_workflow() -> FinalOutputs:
     ]
 
     # Start first job to load and format the ADaM Datasets using the method from domino helpers. Note that the command is similar to a typical Domino Job
-    formatDatasets = run_domino_job_task("Format Datasets", command="Rscript /mnt/imported/code/domino-scripts/admiralFlow/loadDatasets.r", environment_name="Admiral",  output_specs=formatedDatasets, inputs=inputDatasets, dataset_snapshots=[snapshot], use_project_defaults_for_omitted=True)
+    formatDatasets = run_domino_job_task("Format Datasets", command="Rscript /mnt/code/domino-scripts/admiralFlow/loadDatasets.r", environment_name="Admiral",  output_specs=formatedDatasets, inputs=inputDatasets, dataset_snapshots=[snapshot], use_project_defaults_for_omitted=True)
    
     
  #Create second task
@@ -43,6 +43,6 @@ def simple_admiral_workflow() -> FinalOutputs:
         Input(name="adsl", type=FlyteFile, value=formatDatasets[2]), 
         Input(name="ex_ext", type=FlyteFile, value=formatDatasets[0])
         ]
-    deriveVars = run_domino_job_task("Derive Variables", command="Rscript /mnt/imported/code/domino-scripts/admiralFlow/deriveDatasets.r", environment_name="Admiral", inputs=deriveVarsInputs, output_specs=derivedVars, use_project_defaults_for_omitted=True)
+    deriveVars = run_domino_job_task("Derive Variables", command="Rscript /mnt/code/domino-scripts/admiralFlow/deriveDatasets.r", environment_name="Admiral", inputs=deriveVarsInputs, output_specs=derivedVars, use_project_defaults_for_omitted=True)
 
     return FinalOutputs(derived_adsl=deriveVars[0])
